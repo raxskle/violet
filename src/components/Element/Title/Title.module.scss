@@ -1,0 +1,81 @@
+.title {
+  @include flex-row-center;
+  justify-content: flex-start;
+
+  font-size: 34px;
+  font-weight: 800;
+  font-family: "Noto Sans", sans-serif;
+
+  box-sizing: content-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  margin-top: 80px;
+  line-height: 44px;
+  min-height: 44px;
+
+  position: relative;
+
+  // 换行
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+
+  overflow: visible;
+
+  .title-input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+
+    font-size: 34px;
+    font-weight: 800;
+    font-family: "Noto Sans", sans-serif;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0px;
+    min-width: fit-content;
+    height: fit-content;
+    overflow-y: hidden;
+    line-height: 44px;
+
+    // border: 1px solid red;
+    box-sizing: border-box;
+
+    // 确保撑满容器
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow: visible;
+
+    // 交互
+    &::selection {
+      background-color: rgba(148, 231, 240, 0.623);
+    }
+  }
+  .title-input::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .title-value {
+    width: 100%;
+    height: 100%;
+    font-size: 34px;
+
+    // 交互
+    &::selection {
+      background-color: rgba(148, 231, 240, 0.623);
+    }
+  }
+}

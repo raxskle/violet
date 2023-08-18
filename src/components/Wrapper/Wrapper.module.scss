@@ -1,0 +1,19 @@
+@import "../../assets/scss/main.scss";
+
+.container {
+  width: 100%;
+  position: relative;
+}
+.EditBar {
+  width: 60px;
+  height: 24px;
+  @include flex-row-center;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  left: -60px;
+  // background-color: red;
+  transition: all 0.3s;
+  z-index: 2;
+}

@@ -1,0 +1,23 @@
+.home-container {
+  width: 100%;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  .main-field {
+    width: auto;
+    height: 100%;
+    flex-grow: 1;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}

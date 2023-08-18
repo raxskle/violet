@@ -1,0 +1,45 @@
+.container-scroll {
+  width: 100%;
+  height: calc(100% - 40px);
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: rgb(226, 226, 226);
+
+    &:hover {
+      background-color: rgb(167, 167, 167);
+    }
+  }
+
+  .container {
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 80px;
+    padding-right: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    > div {
+      width: 100%;
+    }
+  }
+
+  .elementArea {
+    width: 100%;
+  }
+}
