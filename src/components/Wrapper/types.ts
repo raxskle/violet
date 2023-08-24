@@ -10,6 +10,10 @@ interface WrapperProps {
   index: number;
 }
 
-type RenderElement = (element: Element, index: number) => JSX.Element;
+type RenderElement = (
+  element: Element,
+  index: number,
+  active: boolean
+) => JSX.Element;
 
 export type { Element, WrapperProps, RenderElement };

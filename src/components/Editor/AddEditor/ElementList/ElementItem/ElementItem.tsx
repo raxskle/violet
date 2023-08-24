@@ -15,9 +15,11 @@ export const ElementItem: FC<ElementItemProps> = ({
   return (
     <div
       className={style["element-item"]}
-      onClick={() => {
+      onClick={(e) => {
+        e.stopPropagation(); // 阻止冒泡到顶层使得弹窗不消失
         clickItemAddElement({
           type: element.type,
+          src: element.type === "image" ? "" : undefined,
           content: "",
           style: {},
         });

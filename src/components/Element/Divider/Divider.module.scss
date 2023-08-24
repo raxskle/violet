@@ -1,0 +1,22 @@
+.divider-wrapper {
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  &:active {
+    background-color: rgba(148, 231, 240, 0.623);
+  }
+
+  .divider {
+    box-sizing: border-box;
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+}

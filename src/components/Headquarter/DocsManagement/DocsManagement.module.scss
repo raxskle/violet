@@ -1,9 +1,18 @@
 .container {
   width: 100%;
   height: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   background-color: transparent;
   box-sizing: border-box;
   padding: 4px;
   margin-bottom: 20px;
   margin-top: 20px;
+
+  .doc-list {
+    width: 100%;
+  }
 }

@@ -35,6 +35,8 @@ const AddEditor: FC<AddEditorProps> = ({ active, setActive, index }) => {
         index: index + 1,
       })
     );
+    setActive(false);
+    setShowAddPanel(false);
   };
 
   return (

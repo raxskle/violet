@@ -2,7 +2,7 @@
   @include flex-row-center;
   justify-content: flex-start;
 
-  font-size: medium;
+  font-size: 16px;
   font-family: "Noto Sans", sans-serif;
   font-weight: normal;
 
@@ -34,7 +34,7 @@
     background-color: transparent;
     border: none;
 
-    font-size: medium;
+    font-size: 16px;
     font-weight: normal;
     font-family: "Noto Sans", sans-serif;
 
@@ -74,7 +74,271 @@
   .text-value {
     width: 100%;
     height: 100%;
-    font-size: medium;
+    font-size: 16px;
+
+    // 交互
+    &::selection {
+      background-color: rgba(148, 231, 240, 0.623);
+    }
+  }
+}
+
+.heading1 {
+  @include flex-row-center;
+  justify-content: flex-start;
+
+  font-size: 30px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: normal;
+
+  width: calc(100% - 8px);
+
+  box-sizing: content-box;
+  padding-top: 4px; // 这里的padding-top要和text-input的一致
+  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  // margin-top: 10px; // text 的margin为0
+  margin: 0px;
+  margin-top: 20px;
+  line-height: 40px;
+  min-height: 40px;
+
+  // 换行
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+
+  overflow: visible;
+
+  cursor: text;
+
+  .heading1-input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Noto Sans", sans-serif;
+
+    padding: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0px;
+    min-width: fit-content;
+    line-height: 40px;
+
+    // border: 1px solid red;
+    box-sizing: border-box;
+    // line-height: 30px;
+
+    // 确保撑满容器
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow: visible;
+
+    // 交互
+    &::selection {
+      background-color: rgba(148, 231, 240, 0.623);
+    }
+  }
+
+  .heading1-input::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .heading1-value {
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+
+    // 交互
+    &::selection {
+      background-color: rgba(148, 231, 240, 0.623);
+    }
+  }
+}
+
+.heading2 {
+  @include flex-row-center;
+  justify-content: flex-start;
+
+  font-size: 26px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: normal;
+
+  width: calc(100% - 8px);
+
+  box-sizing: content-box;
+  padding-top: 4px; // 这里的padding-top要和text-input的一致
+  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  // margin-top: 10px; // text 的margin为0
+  margin: 0px;
+  margin-top: 14px;
+  line-height: 36px;
+  min-height: 36px;
+
+  // 换行
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+
+  overflow: visible;
+
+  cursor: text;
+
+  .heading2-input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+
+    font-size: 26px;
+    font-weight: bold;
+    font-family: "Noto Sans", sans-serif;
+
+    padding: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0px;
+    min-width: fit-content;
+    line-height: 36px;
+
+    // border: 1px solid red;
+    box-sizing: border-box;
+    // line-height: 30px;
+
+    // 确保撑满容器
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow: visible;
+
+    // 交互
+    &::selection {
+      background-color: rgba(148, 231, 240, 0.623);
+    }
+  }
+
+  .heading2-input::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .heading2-value {
+    width: 100%;
+    height: 100%;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0px;
+
+    // 交互
+    &::selection {
+      background-color: rgba(148, 231, 240, 0.623);
+    }
+  }
+}
+
+.heading3 {
+  @include flex-row-center;
+  justify-content: flex-start;
+
+  font-size: 20px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: normal;
+
+  width: calc(100% - 8px);
+
+  box-sizing: content-box;
+  padding-top: 4px; // 这里的padding-top要和text-input的一致
+  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  // margin-top: 10px; // text 的margin为0
+  margin: 0px;
+  margin-top: 10px;
+  line-height: 32px;
+  min-height: 32px;
+
+  // 换行
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+
+  overflow: visible;
+
+  cursor: text;
+
+  .heading3-input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Noto Sans", sans-serif;
+
+    padding: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0px;
+    min-width: fit-content;
+    line-height: 32px;
+
+    // border: 1px solid red;
+    box-sizing: border-box;
+    // line-height: 30px;
+
+    // 确保撑满容器
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow: visible;
+
+    // 交互
+    &::selection {
+      background-color: rgba(148, 231, 240, 0.623);
+    }
+  }
+
+  .heading3-input::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .heading3-value {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
 
     // 交互
     &::selection {

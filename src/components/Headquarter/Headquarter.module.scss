@@ -3,4 +3,7 @@
   width: 220px;
   background-color: rgb(245, 245, 245);
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }

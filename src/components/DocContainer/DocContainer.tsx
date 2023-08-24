@@ -6,6 +6,7 @@ import style from "./DocContainer.module.scss";
 import { Wrapper } from "../Wrapper/Wrapper";
 import { nanoid } from "@reduxjs/toolkit";
 import Title from "../Element/Title/Title";
+import { useMoveFocus } from "../Element/hooks/useMoveFocus";
 
 // DocContainer 文章编辑器容器组件，按flex布局渲染所有elements
 // 根据redux数据来显示的
@@ -23,6 +24,10 @@ export const DocContainer: FC<unknown> = () => {
   const documentTitle = useSelector(
     (state: RootState) => state.document[selectedDocId].documentTitle
   );
+
+  useMoveFocus();
+
+  console.log("elements", elements);
 
   return (
     <div className={style["container-scroll"]}>

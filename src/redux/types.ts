@@ -11,11 +11,20 @@ interface Element {
   style: unknown;
 }
 
+interface ImageElement extends Element {
+  id: string;
+  type: "image";
+  content: string;
+  style: unknown;
+  src: string; // media类型需要
+}
+
 // 待增加的element，无需带id
 interface ElementToAdd {
   type: string;
   content: string;
   style: unknown;
+  src?: string; // media类型需要
 }
 
 // element的定义信息
@@ -31,6 +40,14 @@ interface Document {
     title: string;
   };
   elements: Element[];
+  activeElementId: string;
 }
 
-export type { AppData, Element, Document, ElementDefinition, ElementToAdd };
+export type {
+  AppData,
+  Element,
+  Document,
+  ElementDefinition,
+  ElementToAdd,
+  ImageElement,
+};

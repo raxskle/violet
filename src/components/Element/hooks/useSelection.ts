@@ -1,7 +1,17 @@
 import { useState } from "react";
 
+type UseSelectionType = (
+  inputRef: React.RefObject<HTMLTextAreaElement>
+) => [
+  number,
+  number,
+  () => void,
+  () => void,
+  (ref: React.RefObject<HTMLDivElement>) => void
+];
+
 // text等element选中时自动变为textarea，需要调用onSelect获取选中的文本位置
-export const useSelection: () => [number, number, () => void] = () => {
+export const useSelection: UseSelectionType = (inputRef) => {
   const [focusStart, setFocusStart] = useState(0);
   const [focusEnd, setFocusEnd] = useState(0);
 
@@ -15,5 +25,16 @@ export const useSelection: () => [number, number, () => void] = () => {
     }
   };
 
-  return [focusStart, focusEnd, onSelect];
+  const autoFocusAtHead = () => {
+    setFocusStart(0);
+    setFocusEnd(0);
+  };
+
+  // 将focusStart 和 focusEnd 设置为末尾
+  const autoFocusAtTail = (ref: React.RefObject<HTMLDivElement>) => {
+    setFocusStart(ref.current?.innerText.length || 10000); // 10000 just in case
+    setFocusEnd(ref.current?.innerText.length || 10000);
+  };
+
+  return [focusStart, focusEnd, onSelect, autoFocusAtHead, autoFocusAtTail];
 };

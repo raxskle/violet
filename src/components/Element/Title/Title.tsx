@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import style from "./Title.module.scss";
 import { useSelection } from "../hooks/useSelection";
 import { useTypeEnterAddText } from "../hooks/useTypeEnterAddText";
@@ -18,8 +18,9 @@ const Title: FC<unknown> = () => {
 
   // 输入状态
   const [texting, setTexting] = useState(false);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  const [focusStart, focusEnd, onSelect] = useSelection();
+  const [focusStart, focusEnd, onSelect] = useSelection(inputRef);
   const restrictTypeEnter = useTypeEnterAddText();
 
   return (
@@ -32,6 +33,7 @@ const Title: FC<unknown> = () => {
     >
       {texting && (
         <textarea
+          ref={inputRef}
           className={style["title-input"]}
           style={{ resize: "none" }}
           value={title}

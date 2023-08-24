@@ -5,7 +5,9 @@ import { addDocData } from "./documentSlice";
 
 export const useAddDoc = () => {
   const dispatch = useDispatch();
-  const id = nanoid();
-  dispatch(addDocId({ docId: id }));
-  dispatch(addDocData({ docId: id }));
+  return () => {
+    const id = nanoid();
+    dispatch(addDocId({ docId: id }));
+    dispatch(addDocData({ docId: id }));
+  };
 };

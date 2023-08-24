@@ -4,12 +4,34 @@ import style from "./Wrapper.module.scss";
 import AddEditor from "../Editor/AddEditor/AddEditor";
 import MenuEditor from "../Editor/MenuEditor/MenuEditor";
 import type { Element, WrapperProps, RenderElement } from "./types";
+import { Divider } from "~components/Element/Divider/Divider";
+import { Image } from "~components/Element/Image/Image";
+import { ImageElement } from "~redux/types";
 
-const renderElement: RenderElement = (element: Element, index: number) => {
+const renderElement: RenderElement = (
+  element: Element | ImageElement,
+  index: number,
+  active: boolean
+) => {
   switch (element.type) {
+    case "image": {
+      return (
+        <Image
+          element={element as ImageElement}
+          index={index}
+          active={active}
+        />
+      );
+    }
+    case "divider": {
+      return <Divider element={element} index={index} active={active} />;
+    }
     case "text":
+    case "heading1":
+    case "heading2":
+    case "heading3":
     default: {
-      return <Text element={element} index={index} />;
+      return <Text element={element} index={index} active={active} />;
     }
   }
 };
@@ -26,6 +48,10 @@ export const Wrapper: FC<WrapperProps> = function ({ element, index }) {
   return (
     <div
       className={style["container"]}
+      tabIndex={0}
+      onBlur={() => {
+        setShowEditBar(false);
+      }}
       onMouseOver={() => {
         setShowEditBar(true);
       }}
@@ -48,7 +74,7 @@ export const Wrapper: FC<WrapperProps> = function ({ element, index }) {
 
       {/* {showSelectionBar && <div></div>} */}
 
-      {renderElement(element, index)}
+      {renderElement(element, index, active)}
     </div>
   );
 };

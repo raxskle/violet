@@ -23,9 +23,12 @@
 
   .container {
     width: 100%;
+    max-width: 1000px;
     min-height: 100%;
     box-sizing: border-box;
-    margin: 0px;
+    // margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0px;
     padding-left: 80px;
     padding-right: 80px;

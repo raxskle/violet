@@ -19,7 +19,7 @@ module.exports = {
     ],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn", // 未使用变量
-    "react-hooks/exhaustive-deps": "off", // hook 依赖项遗漏
+    // "react-hooks/exhaustive-deps": "off", // hook 依赖项遗漏
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "dot-notation": "off", // 对象[""]
     "@typescript-eslint/dot-notation": "off", // 对象[""]
